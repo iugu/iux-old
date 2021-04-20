@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Gems
+bundle install --path vendor/bundle

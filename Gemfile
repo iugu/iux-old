@@ -2,30 +2,37 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in iux.gemspec
 gemspec
-
-
+rails_version = (ENV["RAILS_VERSION"] || "6.1.1").to_s
 
 gem "rack-cors"
-gem "rake", "~> 13.0"
-
-  gem "actionview"
-  gem "activemodel"
-  gem "activesupport"
-  gem "railties"
-
-
+gem "rake", "~> 12.0"
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+if rails_version != "main"
+  gem "actionview", rails_version
+  gem "activemodel", rails_version
+  gem "activesupport", rails_version
+  gem "railties", rails_version
+else
+  git "https://github.com/rails/rails", ref: "main" do
+    # rubocop:disable Bundler/DuplicatedGem
+    gem "actionview"
+    gem "activemodel"
+    gem "activerecord"
+    gem "activesupport"
+    gem "railties"
+    # rubocop:enable Bundler/DuplicatedGem
+  end
+end
 
 # Use Puma as the app server
 gem "puma", "~> 4.3.6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "~> 5.0"
+gem "money"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
-gem "rubocop", "~> 1.7"
-gem "money-rails"
-gem "simple_form"
-gem "view_component", require: "view_component/engine"
+gem "view_component", path: ENV["VIEW_COMPONENT_PATH"] if ENV["VIEW_COMPONENT_PATH"]
+gem "view_component_storybook", "~> 0.8.0"
