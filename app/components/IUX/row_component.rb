@@ -1,6 +1,6 @@
 module IUX
   class RowComponent < IUX::Component
-    attr_reader :id, :width, :height, :wrap, :v_align, :h_align
+    attr_reader :id, :width, :height, :wrap, :v_align, :h_align, :helpers_arguments
 
     def initialize(
       id: '', 
@@ -8,7 +8,8 @@ module IUX
       height: 'auto',
       wrap: 'nowrap',
       v_align: 'start',
-      h_align: 'start'
+      h_align: 'start',
+      helpers_arguments: ''
     )
       @id = id
       @width = width
@@ -16,6 +17,7 @@ module IUX
       @wrap = wrap_class_name(wrap)
       @v_align = justify_class_name(v_align)
       @h_align = align_itens_class_name(h_align)
+      @helpers_arguments = helpers_arguments
 
     end
 

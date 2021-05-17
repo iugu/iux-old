@@ -1,5 +1,5 @@
 module IUX
-  class ContentHeaderComponent < IUX::Component
+  class PanelHeaderComponent < IUX::Component
     attr_reader :title
 
     def initialize(

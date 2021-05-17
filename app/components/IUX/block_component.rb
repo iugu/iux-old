@@ -1,6 +1,6 @@
 module IUX
   class BlockComponent < IUX::Component
-    attr_reader :id, :width, :height, :order, :glow, :shrink, :align
+    attr_reader :id, :width, :height, :order, :glow, :shrink, :align, :helpers_arguments
 
     def initialize(
       width: 'auto',
@@ -8,7 +8,8 @@ module IUX
       order: '0',
       glow: '0',
       shrink: '1',
-      align: 'auto'
+      align: 'auto',
+      helpers_arguments: ''
     )
       @id = id
       @width = width
@@ -17,6 +18,7 @@ module IUX
       @glow = glow
       @shrink = shrink
       @align = align_self_class_name(align)
+      @helpers_arguments = helpers_arguments
     end
 
     def align_self_class_name(align)

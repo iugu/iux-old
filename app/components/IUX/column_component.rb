@@ -1,6 +1,6 @@
 module IUX
   class ColumnComponent < IUX::Component
-    attr_reader :id, :width, :height, :wrap, :h_align, :v_align
+    attr_reader :id, :width, :height, :wrap, :h_align, :v_align, :helpers_arguments
 
     def initialize(
       id: '', 
@@ -8,7 +8,8 @@ module IUX
       height: 'auto',
       wrap: 'nowrap',
       h_align: 'start',
-      v_align: 'start'
+      v_align: 'start',
+      helpers_arguments: ''
     )
       @id = id
       @width = width
@@ -16,6 +17,7 @@ module IUX
       @wrap = wrap_class_name(wrap)
       @h_align = justify_class_name(h_align)
       @v_align = align_itens_class_name(v_align)
+      @helpers_arguments = helpers_arguments
 
     end
 

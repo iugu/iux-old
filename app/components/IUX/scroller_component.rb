@@ -1,9 +1,15 @@
 module IUX
   class ScrollerComponent < IUX::Component
-    attr_reader :direction
+    attr_reader :direction, :width, :height
 
-    def initialize(direction: 'vertical')
+    def initialize(
+      direction: 'vertical',
+      width: 'auto',
+      height: 'auto'
+    )
       @direction = direction_to_css(direction)
+      @width = width
+      @height = height
     end
 
     def direction_to_css(direction)
