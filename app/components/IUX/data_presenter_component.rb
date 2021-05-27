@@ -23,7 +23,7 @@ module IUX
         when 'badge'
           render(IUX::BadgeComponent.new(type: @type)) { @value }
         when 'button'
-          render(IUX::ButtonComponent.new(type: 'default', alternate: 'secondary', size: 'mini', url: @url)) { @value }
+          render(IUX::ButtonComponent.new(type: @type, alternate: @alternate, size: 'mini', url: @url)) { @value }
         when 'link'
           render(IUX::ButtonComponent.new(type: 'default', caption: @caption, alternate: 'link', size: 'normal', url: @url)) { @value }  
         when 'text'

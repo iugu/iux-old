@@ -6,7 +6,7 @@ module IUX
     SIZES = %w[normal large small mini].freeze
     ALTERNATES = %w[default secondary outline ghost link].freeze
 
-    attr_reader :size, :type, :url, :alternate
+    attr_reader :size, :type, :url, :alternate, :action, :method
 
     validates :type, inclusion: { in: TYPES, valid: TYPES.to_sentence, allow_nil: true}
     validates :size, inclusion: { in: SIZES, valid: SIZES.to_sentence, allow_nil: true}
@@ -21,13 +21,17 @@ module IUX
       type: 'default',
       url: '#',
       alternate: 'default',
-      caption: nil
+      caption: nil,
+      action: nil,
+      method: nil
     )
       @size = size
       @type = type
       @url = url
       @alternate = alternate
       @caption = caption
+      @action = action(action)
+      @method = method(method)
     end
 
   end
