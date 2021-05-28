@@ -23,15 +23,15 @@ module IUX
       alternate: 'default',
       caption: nil,
       action: nil,
-      method: nil
+      method: 'get'
     )
       @size = size
       @type = type
       @url = url
       @alternate = alternate
       @caption = caption
-      @action = action(action)
-      @method = method(method)
+      @action = action
+      @method = method
     end
 
   end

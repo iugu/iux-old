@@ -2,4 +2,8 @@
   <span class="caption"><%= @caption %></span>
 <% end %>
 
-<a href="<%= url %>" role="button" data-method="put" class="<%= type %> <%= size %> <%= alternate %> "><%= content %></a>
+<% if @action == "submit" %>
+  <button type="submit" role="button" data-method="<%= method %>" class="<%= type %> <%= size %> <%= alternate %> "><%= content %></a>
+<% else %>
+  <a href="<%= url %>" role="button" data-method="<%= method %>" class="<%= type %> <%= size %> <%= alternate %> "><%= content %></a>
+<% end %>

@@ -1,8 +1,8 @@
 module IUX
   class DataPresenterComponent < IUX::Component
-      attr_reader :value, :type, :theme, :presenter, :alternate, :caption, :url
+      attr_reader :value, :type, :theme, :presenter, :alternate, :caption, :url, :method, :action
 
-      def initialize(value: '', type: 'default', theme: '', presenter: '', alternate: 'normal', caption: nil, url: '#')
+      def initialize(value: '', type: 'default', theme: '', presenter: '', alternate: 'normal', caption: nil, url: '#', method: 'get', action: nil)
         @presenter = presenter
         @value = value
         @theme = theme
@@ -10,6 +10,8 @@ module IUX
         @alternate = alternate
         @caption = caption
         @url = url
+        @method = method
+        @action = action
       end
 
       def presenter
@@ -23,12 +25,11 @@ module IUX
         when 'badge'
           render(IUX::BadgeComponent.new(type: @type)) { @value }
         when 'button'
-          render(IUX::ButtonComponent.new(type: @type, alternate: @alternate, size: 'mini', url: @url)) { @value }
+          render(IUX::ButtonComponent.new(type: @type, alternate: @alternate, size: 'mini', url: @url, method: @method, action: @action)) { @value }
         when 'link'
           render(IUX::ButtonComponent.new(type: 'default', caption: @caption, alternate: 'link', size: 'normal', url: @url)) { @value }  
         when 'text'
-          render(IUX::TextComponent.new(value: @value, caption: @caption))
-          
+          render(IUX::TextComponent.new(value: @value, caption: @caption)) 
         end
       end
     end
