@@ -4,7 +4,7 @@ module IUX
 
     TYPES = %w[success danger warning default generic information].freeze
     THEMES = %w[normal light dark].freeze
-    ALTERNATES = %w[solid outline].freeze
+    ALTERNATES = %w[nil solid outline].freeze
 
     attr_reader :theme, :type, :alternate
 
@@ -19,7 +19,7 @@ module IUX
     def initialize(theme: 'normal',
                   type: 'generic',
                   alternate: 'solid',
-                  caption: false)
+                  caption: nil)
 
       @theme = theme
       @type = type
