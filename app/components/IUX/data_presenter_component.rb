@@ -2,7 +2,7 @@ module IUX
   class DataPresenterComponent < IUX::Component
       attr_reader :value, :type, :theme, :presenter, :alternate, :caption, :url, :method, :action, :sign
 
-      def initialize(value: '', type: 'default', theme: '', presenter: '', alternate: nil, caption: nil, url: '#', method: 'get', action: nil, sign: nil)
+      def initialize(value: '', type: 'default', theme: nil, presenter: '', alternate: nil, caption: nil, url: '#', method: 'get', action: nil, sign: nil)
         @presenter = presenter
         @value = value
         @theme = theme

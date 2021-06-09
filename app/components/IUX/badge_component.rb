@@ -3,7 +3,7 @@ module IUX
     include ActiveModel::Validations
 
     TYPES = %w[success danger warning default generic information].freeze
-    THEMES = %w[normal light dark].freeze
+    THEMES = %w[nil normal light dark].freeze
     ALTERNATES = %w[nil solid outline].freeze
 
     attr_reader :theme, :type, :alternate
