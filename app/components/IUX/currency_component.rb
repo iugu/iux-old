@@ -5,6 +5,7 @@ module IUX
       @value = value
       @caption = caption
       @sign_color = sign_color(sign)
+      @sign_symbol = sign_symbol(sign)
     end
 
     def sign_color(sign)
@@ -20,9 +21,9 @@ module IUX
 
     def sign_symbol(sign)
       if(sign == "positive")
-        symbol = ' + '
+        symbol = '+ '
       elsif (sign == "negative")
-        symbol = ' - '
+        symbol = '- '
       else
         symbol = ''
       end
