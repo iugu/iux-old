@@ -4,6 +4,7 @@ PATH
     iux_view_components (0.0.35)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+      money
       view_component (>= 2.0.0, < 3.0)
 
 GEM
@@ -100,7 +101,6 @@ DEPENDENCIES
   activesupport (= 6.1.1)
   bootsnap (>= 1.4.2)
   iux_view_components!
-  money
   puma (~> 4.3.6)
   rack-cors
   railties (= 6.1.1)
@@ -109,4 +109,4 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 BUNDLED WITH
-   2.2.9
+   2.2.16

@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency     "actionview", ">= 5.0.0"
+  spec.add_runtime_dependency     "money"
   spec.add_runtime_dependency     "activesupport", ">= 5.0.0"
   spec.add_runtime_dependency     "view_component", [">= 2.0.0", "< 3.0"]
 
