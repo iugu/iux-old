@@ -8,7 +8,15 @@
   </thead>
 
   <tbody>
-    <%= content %>
+    <% if content.present? %>
+      <%= content %>
+    <% else %>
+      <tr>
+        <td colspan="<%= header.size %>">
+          <p class="ta-center">Não foram encontrados registros</p>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 
 </table>
