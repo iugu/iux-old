@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 gemspec
-rails_version = (ENV["RAILS_VERSION"] || "6.1.1").to_s
+rails_version = (ENV["RAILS_VERSION"] || "6.1.3.2").to_s
 
 gem "rack-cors"
 gem "rake", "~> 12.0"
@@ -26,7 +26,7 @@ else
 end
 
 # Use Puma as the app server
-gem "puma", "~> 4.3.6"
+gem "puma", ">= 4.3.8"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "~> 5.0"
 
