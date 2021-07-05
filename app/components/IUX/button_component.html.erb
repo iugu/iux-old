@@ -5,5 +5,5 @@
 <% if @action == "submit" %>
   <button type="submit" role="button" data-method="<%= method %>" class="<%= type %> <%= size %> <%= alternate %> "><%= content %></a>
 <% else %>
-  <a href="<%= url %>" role="button" data-method="<%= method %>" class="<%= type %> <%= size %> <%= alternate %> "><%= content %></a>
+  <a id="<%= id %>" href="<%= url %>" role="button" data-method="<%= method %>" class="<%= type %> <%= size %> <%= alternate %> "><%= content %></a>
 <% end %>

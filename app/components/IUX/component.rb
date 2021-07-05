@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require "view_component/version"
+require "securerandom"
 
 module IUX
   # @private
