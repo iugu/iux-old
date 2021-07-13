@@ -1,5 +1,5 @@
 module IUX
-  class Pagination < IUX::Component
+  class PaginationComponent < IUX::Component
     attr_reader :mode
 
     def initialize(
