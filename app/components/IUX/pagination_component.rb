@@ -3,7 +3,7 @@ module IUX
     attr_reader :mode
 
     def initialize(
-      mode: 'full',
+      mode: 'full'
     )
       @mode = mode
     end
