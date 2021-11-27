@@ -1,6 +1,0 @@
-<% if caption %>
-  <span class="caption"><%= caption %></span>
-<% end %>
-<span role="currency" style="color: <%= @sign_color %>">
-  <%= Money.new(value, "BRL").format(with_currency: false) %>
-</span>

@@ -1,6 +1,0 @@
-<span <% if selected %> class="selected" <% end %> >
-  <a href="<%= href %>"><%= title %></a>
-  <% unless badge.empty? %>
-    <%= render(IUX::BadgeComponent.new(type: badge[:type])) { badge[:label] } %>
-  <% end %>
-</span>
